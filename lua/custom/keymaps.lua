@@ -36,6 +36,9 @@ vim.keymap.set('n', '<leader>at', ':CodeCompanionChat<CR>')
 vim.keymap.set('v', '<leader>am', ':CodeCompanionActions<CR>')
 vim.keymap.set('n', '<leader>ac', ':CodeCompanionCmd')
 
+-- Grug far
+vim.keymap.set('n', '<leader>sr', ':GrugFar<CR>', { desc = '[S]earch [R]esume' })
+
 -- Harpoon
 vim.keymap.set('n', '<leader>H', function()
   require('harpoon'):list():add()
