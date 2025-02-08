@@ -1,3 +1,6 @@
+-- remembering old days
+vim.keymap.set('n', '<leader>pv', ':Ex<CR>')
+
 -- delete without yanking
 vim.keymap.set('x', '<leader>P', [["_dP]])
 
@@ -34,6 +37,9 @@ vim.keymap.set('v', '<leader>am', ':CodeCompanionActions<CR>')
 vim.keymap.set('n', '<leader>ac', ':CodeCompanionCmd')
 
 -- Harpoon
+vim.keymap.set('n', '<leader>H', function()
+  require('harpoon'):list():add()
+end)
 vim.keymap.set('n', '<C-h>', function()
   require('harpoon'):list():select(1)
 end)
