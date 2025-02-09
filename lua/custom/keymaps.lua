@@ -36,6 +36,11 @@ vim.keymap.set('n', '<leader>at', ':CodeCompanionChat<CR>')
 vim.keymap.set('v', '<leader>am', ':CodeCompanionActions<CR>')
 vim.keymap.set('n', '<leader>ac', ':CodeCompanionCmd')
 
+-- LSP
+vim.keymap.set('i', '<C-s>', function()
+  vim.lsp.buf.signature_help()
+end)
+
 -- Grug far
 vim.keymap.set('n', '<leader>sr', ':GrugFar<CR>', { desc = '[S]earch [R]esume' })
 
