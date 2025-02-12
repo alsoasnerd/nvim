@@ -15,7 +15,7 @@ vim.keymap.set('n', 'N', 'Nzzzv')
 vim.keymap.set('n', 'J', 'mzJ`z')
 
 -- make file executable
-vim.keymap.set('n', '<C-x>', '<cmd>!chmod +x %<CR>', { silent = true })
+vim.keymap.set('n', '<leader>x', '<cmd>!chmod +x %<CR>', { silent = true })
 
 --- moving text
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
