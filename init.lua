@@ -802,6 +802,13 @@ require('lazy').setup({
       luasnip.config.setup {}
 
       cmp.setup {
+        enabled = function()
+          local ft = vim.bo.filetype
+          if ft == 'oil' then
+            return false
+          end
+          return true
+        end,
         snippet = {
           expand = function(args)
             luasnip.lsp_expand(args.body)

@@ -1,13 +1,3 @@
-require('cmp').setup {
-  enabled = function()
-    local ft = vim.bo.filetype
-    if ft == 'oil' then
-      return false
-    end
-    return true
-  end,
-}
-
 return {
   'petertriho/cmp-git',
   dependencies = { 'hrsh7th/nvim-cmp' },
