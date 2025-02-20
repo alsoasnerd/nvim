@@ -618,6 +618,15 @@ require('lazy').setup({
       --  By default, Neovim doesn't support everything that is in the LSP specification.
       --  When you add nvim-cmp, luasnip, etc. Neovim now has *more* capabilities.
       --  So, we create new capabilities with nvim cmp, and then broadcast that to the servers.
+      -- Add bacon_ls
+      require('lspconfig').bacon_ls.setup {
+        init_options = {
+          updateOnSave = true,
+          updateOnSaveWaitMillis = 1000,
+          updateOnChange = false,
+        },
+      }
+
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
@@ -639,6 +648,8 @@ require('lazy').setup({
             ['rust-analyzer'] = {
               cachePriming = { enable = false },
               procMacro = { enable = false },
+              checkOnSave = { enable = false },
+              diagnostics = { enable = false },
             },
           },
         },
@@ -688,7 +699,7 @@ require('lazy').setup({
 
       require('mason-lspconfig').setup {
         automatic_installation = true,
-        ensure_installed = { 'rust_analyzer', 'tailwindcss' },
+        ensure_installed = { 'tailwindcss' },
         handlers = {
           function(server_name)
             local server = servers[server_name] or {}
