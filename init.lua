@@ -135,6 +135,9 @@ vim.opt.undofile = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
+vim.opt.tabstop = 4
+vim.opt.expandtab = true
+
 -- Keep signcolumn on by default
 vim.opt.signcolumn = 'yes'
 
